@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My blog</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'mblog/stylee.css' %}" />
+    <link rel="shortcut icon" href="#" />
+
+    <script src=" {% static '/mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/js/htmx.min.js' %}"></script>
+    <!-- Intégration de jquery -->
+    <script src="{% static '/mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/js/jquery-3.7.1.min.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'fontawesome/fontawesome-free-6.5.1-web/css/all.css' %}" />
+  </head>
+
+  <body class="bg-image">
+    <script src="{% static 'fontawesome/fontawesome-free-6.5.1-web/js/all.js' %}"></script>
+
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top header">
+        <div class="container">
+          <a class="navbar-brand text-uppercase fw-bold" href="{% url 'home' %} "><span class="bg-primary bg-gradient p-1 rounded-3 text-light">Ayo</span>'Man</a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav navbar-items fs-6">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'infos' %}">Infos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'contact' %}">Contactez-nous</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">À propos</a>
+              </li>
+              <!-- Ajoutez d'autres liens de navigation ici -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    {% if admin_profile %}
+      <div class="admin-profile">
+        <img src="{{ admin_profile.url }}" alt="Admin Profile Picture" />
+        <!-- Ajoutez d'autres informations de profil ici si nécessaire -->
+      </div>
+    {% endif %}
+
+    {% block content %}
+
+    {% endblock %}
+    <!-- Footer -->
+    <footer class="py-3 bg-grey">
+      <p class="m-0 text-dark text-center">Copyright &copy; Blog....</p>
+    </footer>
+    <!-- Liens vers les fichiers Bootstrap JavaScript (facultatif) -->
+    <script src="{% static 'mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/js/bootstrap.min.js' %}"></script>
+    {% block extra_js %}
+
+    {% endblock %}
+  </body>
+</html>

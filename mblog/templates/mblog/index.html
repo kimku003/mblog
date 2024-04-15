@@ -1,0 +1,68 @@
+{% extends 'mblog/base.html' %}
+{% load static %}
+
+{% block content %}
+  <header class="masthead mt">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h3 class="site-heading my-4 mt-3 text-white">Welcome to my awesome Blog</h3>
+            <p class="text-light">We are there to ..! &nbsp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container col-md-12 bcg3">
+    <div class="col-md-6 col-xs-2 col-sm-2 col-lg-6">
+      {% block profil %}
+        {% include 'mblog/profil.html' %}
+      {% endblock %}
+    </div>
+
+    <div class="row">
+      <!-- Blog Entries Column -->
+      <div class="col-md-8 mt-3 left">
+        {% for post in post_list %}
+          <div class="card mb-4 bcg2">
+            <div class="card-body">
+              <h2 class="card-title">{{ post.title }}</h2>
+              <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on }}</p>
+              <p class="card-text">{{ post.content|slice:':200' }}</p>
+              <div class="rating" data-post-id="{{ post.id }}">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+              </div>
+              <div class="col-md-6">
+                {% if post.image %}
+                  <img width="400px" src="{{ post.image.url }}" alt="{{ post.title }}" />
+                {% endif %}
+              </div> <div class="col-md-6">
+                {% if post.video %}
+                  <video width="400px" height="350px" controls>
+                    <source src="{{ post.video.url }}" type="video/mp4" />Your browser does not upport this video tag.
+                  </video>
+                {% endif %}
+              </div>
+              <a href="{% url 'post_detail'  post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+              <a href="{% url 'post_detail'  post.slug  %}" class="btn btn-info">Comment &rarr;</a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% block sidebar %}
+        {% include 'mblog/sidebar.html' %}
+      {% endblock %}
+    </div>
+  </div>
+  <form id="csrf-token-form" method="post" style="display: none;">
+    {% csrf_token %}
+  </form>
+
+{% endblock %}

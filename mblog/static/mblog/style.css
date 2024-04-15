@@ -1,0 +1,413 @@
+/* Styles CSS personnalisés */
+.bg-image {
+  background-image: url("/static/mblog/images/fond.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+      /* degrade */
+
+.degrade {
+  background: linear-gradient(
+    to bottom right,
+    red,
+    rgb(88, 148, 148),
+    rgba(195, 215, 215, 0.734),
+    orange
+  );
+}
+.degrade1 {
+  background: linear-gradient(to top, lime, cyan);
+}
+.degrade3 {
+  background: linear-gradient(
+    to top,
+    rgb(0, 0, 0),
+    rgb(28, 30, 30),
+    rgb(44, 33, 33),
+    rgb(47, 35, 35)
+  );
+}
+.degrade2 {
+  background: linear-gradient(
+    to bottom left,
+    red,
+    rgb(88, 148, 148),
+    rgba(195, 215, 215, 0.734),
+    orange
+  );
+}
+.degrade4 {
+  background: linear-gradient(
+    to bottom left,
+    rgb(207, 197, 197),
+    rgb(60, 70, 70),
+    rgba(33, 39, 34, 0.734),
+    rgb(199, 146, 68)
+  );
+
+}
+.degrade5 {
+    background: linear-gradient(
+    to bottom right,
+    red,
+    rgb(0, 0, 0),
+    rgb(15, 83, 83),
+    red
+  );
+
+}
+
+.degrade6 {
+  background: linear-gradient(
+  to bottom left,
+  red,
+  rgb(0, 0, 0),
+  rgb(18, 66, 66),
+  red
+);
+
+}
+
+                                  /**/
+
+.bcg1 {
+  background: rgb(40, 142, 118);
+  opacity: 100%;
+
+}
+
+.bcg2 {
+    background: rgb(137, 180, 170);
+
+}
+
+      /* margin and padding */
+.mb {
+  margin-bottom: 30px;
+}
+
+.m {
+  margin: 30px;
+}
+.ml {
+  margin-left: 30px;
+}
+
+.mr {
+  margin-right: 30px;
+}
+
+.mt {
+  margin-top: 30px;
+}
+
+.pb {
+  padding-bottom: 30px;
+}
+
+.p {
+  padding: 30px;
+}
+.pl {
+  padding-left: 30px;
+}
+
+.pr {
+  padding-right: 30px;
+}
+
+.pt {
+  padding-top: 50px;
+}
+
+                        /* couleurs personalisées */
+
+
+.cbr {
+  background-color: rgb(144, 90, 238);
+}
+.cbr1 {
+  background-color: darkmagenta;
+}
+.caq  {
+  color: aqua;
+}
+
+              /*couleur pour le header*/
+
+        
+.navbar-items {
+  float: right;
+}
+                      
+.navbar-custom {
+  background-color: #40c370;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+  color: #960c4f;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+  color: #3214c9d4;
+}
+
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:focus .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+  color: pink;
+}
+
+.scroll {
+  min-height: calc(100vh - 56px);
+}
+
+
+
+          /* text-color*/
+
+.tc1 {
+  color: #3214c9d4;
+}
+.tc2 {
+ color: #473c7ad4;
+}
+.tc3 {
+  color: #14c3c9d4;
+}
+.tc4 {
+  color: #d7b506d4;
+}
+.tc5 {
+  color: #ea510bd4;
+}
+.tc6 {
+  color: #c9145cd4;
+}
+.tc7 {
+  color: #ffebf3d4;
+}
+
+
+
+      /* BORDERS */
+        /*border style*/
+.bsd0 {
+  border-style: double;
+}
+.bsd1 {
+  border-style: dashed;
+}
+.bsd2 {
+  border-style: dotted;
+}
+.bsg {
+  border-style:groove;
+}
+.bsh {
+  border-style:hidden;
+}
+.bsi0 {
+  border-style:inherit;
+}
+.bsi1 {
+  border-style:initial;
+}
+.bsi2 {
+  border-style:inset;
+}
+.bsn {
+  border-style:none;
+}
+.bso {
+  border-style:outset;
+}
+.bsr {
+  border-style:ridge;
+}
+.bss {
+  border-style:solid;
+}
+.bsu {
+  border-style:unset;
+}
+
+
+
+
+      /* border color */
+
+.bct {
+  border-color: transparent;
+}
+
+.bca {
+  border-color:aliceblue;
+}
+.bc0 {
+  border-color:#960c4f;
+}
+.bc1 {
+  border-color:rgb(238, 255, 0);
+}
+.bc2 {
+  border-color:rgb(0, 0, 255);
+}
+.bc3 {
+  border-color:rgb(255, 0, 238);
+}
+.bc4 {
+  border-color:rgb(255, 0, 187);
+}
+.bc5 {
+  border-color:rgb(5, 63, 63);
+}
+.bc6 {
+  border-color:rgb(79, 7, 7);
+}
+.bc7 {
+  border-color:rgb(229, 255, 0);
+}
+.bc8 {
+  border-color:rgb(64, 255, 0);
+}
+.bc9 {
+  border-color:rgb(29, 40, 40);
+}
+.bc10 {
+  border-color:rgb(49, 58, 58);
+}
+.bcv {
+  border-color:violet;
+}
+.bca0 {
+  border-color:aquamarine;
+}
+
+.bcb {
+  border-color:black;
+}
+.bcc {
+  border-color:cadetblue;
+}
+
+.bcc0 {
+  border-color:chartreuse;
+}
+.bcd0 {
+  border-color:darkblue;
+}
+
+.bcd1 {
+  border-color:darkgray;
+}
+.bcd3 {
+  border-color:darkmagenta;
+}
+
+.bcd4 {
+  border-color:darkred;
+}
+
+.bcd5 {
+  border-color:deeppink;
+}
+
+.bcf0 {
+  border-color:firebrick;
+}
+
+.bcf1 {
+  border-color:fuchsia;
+}
+
+.bcg {
+  border-color:gold;
+}
+
+
+            /* border radius */
+
+.br1 {
+  border-radius: 10px;
+}
+.br2 {
+  border-radius: 20px;
+}
+
+.br3 {
+  border-radius: 30px;
+}
+
+
+              /*  FIXER UN ÉLÉMENT  */
+
+.nsb {
+  position: fixed;
+  bottom: -10%;
+  width: 100%;
+  z-index: 100;
+}
+
+.nst {
+  position: fixed;
+  top: 10%;
+  width: 100%;
+  z-index: 100;
+}
+
+.hid {
+  overflow: hidden;
+}
+
+.pd {
+  position: fixed;
+  right: 10;
+  top: 100;
+}
+
+.pf {
+  position: fixed;
+}
+
+
+
+
+    /*  Text opacity*/
+
+.to1 {
+  opacity: 1;
+}
+
+    /* Text-decoration */
+
+.tdu {
+  text-decoration: underline;
+}
+
+.btrr {
+  border-top-right-radius: var();
+}
+
+.btlr {
+  border-top-left-radius: 15px;
+}
+
+.bbrr {
+  border-bottom-right-radius: 100px;
+}
+
+.btlr {
+  border-top-left-radius: 15px;
+}
+
+
+.bblr {
+  border-bottom-left-radius: 15px;
+}
+
+
+
+

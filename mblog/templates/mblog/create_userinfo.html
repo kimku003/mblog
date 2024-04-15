@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire</title>
+  </head>
+  <body>
+    {% extends 'mblog/base.html' %}
+
+    {% block content %}
+      <div class="col-12 offset-md-1 col-md-6 pl pt">
+        <form class="row">
+          <div class="col-6 my-2">
+            <label for="firstname" class="form-label">Nom</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="textHelp" />
+          </div>
+          <div class="col-6 my-2">
+            <label for="lastname" class="form-label">Prénom</label>
+            <input type="text" class="form-control" name="lastname" />
+          </div>
+
+          <div class="col-12 my-2">
+            <label for="birth_day" class="form-label">Date de naissance</label>
+            <input type="date" class="form-control" name="birth_day" />
+          </div>
+
+          <div class="col-12 my-1">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" />
+          </div>
+
+          <div class="col-12 my-2">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="message" rows="3"></textarea>
+          </div>
+
+          <div class="row text-dark">
+            <p>Êtes-vous sûr d'avoir saisi les bonnes informations ?</p>
+          </div>
+
+          <div class="col-12 my-2">
+            <button type="submit" class="btn btn-primary w-100">Soumettre</button>
+          </div>
+        </form>
+      </div>
+    {% endblock %}
+  </body>
+</html>

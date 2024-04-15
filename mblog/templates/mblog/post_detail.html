@@ -1,0 +1,81 @@
+{% extends 'mblog/base.html' %}
+{% load static %}
+{% block content %}
+  <div class="container mt">
+    <div class="row">
+      <div class="col-md-8 card mb-4 mt-3 left bcg3 top">
+        <div class="card-body bcg3">
+          <div class="rating" data-post-id="{{ post.id }}">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div>
+
+          <h1>
+            {% block title %}
+              {{ post.title }}
+            {% endblock %}
+          </h1>
+          <p class="text-muted">{{ post.author }} | {{ post.created_on }}</p>
+          <p class="card-text">{{ post.content|safe }}</p>
+        </div>
+      </div>
+      {% block sidebar %}
+        {% include 'mblog/sidebar.html' %}
+      {% endblock %}
+
+      <div class="col-md-6 card mb-4 mt-3 bcg3">
+        <div class="card-body">
+          <!-- post_detail.html -->
+          <!-- comments -->
+          <h2>{{ comments.count }} comments</h2>
+          {% for comment in comments %}
+            <div class="container bss br3 bw1">
+              <div class="comments" style="padding: 10px;">
+                <p class="font-weight-bold tc1">
+                  {{ comment.name }}
+                  <span class="text-muted font-weight-normal">{{ comment.created_on }}</span>
+                </p>
+                {{ comment.body|linebreaks }}
+              </div>
+            </div>
+          {% endfor %}
+
+          {% if new_comment %}
+            <div class="alert alert-success" role="alert">Your comment is awaiting moderation</div>
+          {% else %}
+            <h3>Leave a comment</h3>
+
+            <form method="post" class="needs-validation" novalidate>
+              {% csrf_token %}
+
+              <div class="container col-6">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" />
+                </div>
+
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required />
+                  <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="body" class="form-label">commentez</label>
+                  <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+                  <div class="invalid-feedback">Vous ne pouvez pas laisser un commentaire vide.</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<form id="csrf-token-form" method="post" style="display: none;">
+  {% csrf_token %}
+</form>

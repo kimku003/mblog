@@ -1,0 +1,227 @@
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-size: 18px;
+      
+    }
+    .bg-image {
+  background-image: url("/static/mblog/images/fond.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+    .bg-profil {
+  background-image: url("/static/mblog/images/africaine.jpeg");
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
+
+    .head_text {
+      color: white;
+    }
+    .header {
+      background-color: #653636;
+    }
+    .card {
+      box-shadow: 0 16px 48px #727d88;
+    }
+
+
+      .shadow {
+        box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.1);
+      }
+      .btn-danger {
+        color: #fff;
+        background-color: #f00000;
+        border-color: #dc281e;
+      }
+      .masthead {
+        background: #5638c4;
+        height: auto;
+        padding-bottom: 15px;
+        box-shadow: 0 16px 48px #4d6176;
+        padding-top: 10px;
+        text-align: center;
+
+      }
+
+
+
+     /* margin and padding */
+.mb {
+  margin-bottom: 30px;
+}
+
+.m {
+  margin: 30px;
+}
+.ml {
+  margin-left: 30px;
+}
+
+.mr {
+  margin-right: 30px;
+}
+
+.mt {
+  margin-top: 50px;
+}
+
+.pb {
+  padding-bottom: 30px;
+}
+
+.p {
+  padding: 30px;
+}
+.pl {
+  padding-left: 30px;
+}
+
+.pr {
+  padding-right: 30px;
+}
+
+.pt {
+  padding-top: 50px;
+}
+
+
+
+                                 /*background colors*/
+
+.bcg1 {
+  background: rgb(40, 142, 118);
+  opacity: 100%;
+
+}
+
+.bcg2 {
+    background: rgb(137, 180, 170);
+}
+
+.bcg3 {
+    background: rgb(110, 73, 155);
+}
+
+.degrade1 {
+  background: linear-gradient(to top, rgb(0, 183, 255), cyan, rgb(159, 76, 172));
+}
+
+
+
+
+
+
+.bss {
+  border-style:solid;
+}
+
+.br1 {
+  border-radius: 10px;
+}
+.br2 {
+  border-radius: 20px;
+}
+
+.br3 {
+  border-radius: 30px;
+}
+.br4 {
+  border-radius: 100px;
+}
+  /*Border-width*/
+
+.bw1 {
+  border-width: 1px;
+}
+
+  /*Border-width*/
+
+.bw1 {
+  border-width: 1px;
+}
+
+
+
+
+
+
+         /* text-color*/
+
+.tc1 {
+  color: #3214c9d4;
+}
+.tc2 {
+ color: #473c7ad4;
+}
+.tc3 {
+  color: #14c3c9d4;
+}
+.tc4 {
+  color: #d7b506d4;
+}
+.tc5 {
+  color: #ea510bd4;
+}
+.tc6 {
+  color: #c9145cd4;
+}
+.tc7 {
+  color: #ffebf3d4;
+}
+
+
+
+
+                           /*couleur pour le header*/
+  
+.navbar-items {
+  float: right;
+}
+    
+.header .nav-item.active .nav-link,
+.header .nav-item:focus .nav-link,
+.header .nav-item:hover .nav-link {
+  color: pink;
+}
+
+.pf {
+  position: fixed;
+}
+
+
+
+.profile-image {
+ width: 500px; /* Ajustez la taille selon vos besoins */
+ height: 300px; /* Assurez-vous que la hauteur correspond à la largeur pour un cercle parfait */
+ border-radius: 50%; /* Cela rend l'image circulaire */
+ object-fit: cover; /* Assurez-vous que l'image couvre toute la zone sans être déformée */
+}
+
+
+/**/
+* {
+	box-sizing: border-box;
+}
+
+
+
+.stars {
+	margin: 50px;
+	text-align: center;
+}
+
+.stargrey {
+	color: #96969d;
+}
+
+.yellow {
+	color: #fedc18;
+}
+
+.star:hover {
+	cursor: pointer;
+}

@@ -1,0 +1,16 @@
+{% block profil %}
+  <div class="container">
+    <div class="row">
+      <!-- Colonne pour les images de profil -->
+      <div class="col-md-4">
+        {% for image in profile_images %}
+          {% if image.image %}
+            <img src="{{ image.image.url }}" alt="{{ image.description }}" class="profile-image" />
+          {% endif %}
+        {% endfor %}
+      </div>
+      <!-- Colonne pour les posts -->
+      <div class="col-md-8"></div>
+    </div>
+  </div>
+{% endblock %}

@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env()
+environ.Env.read_env(env_file=str(BASE_DIR / "blog" / ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -25,7 +28,7 @@ SECRET_KEY = 'django-insecure-uv-strvhu6-c$mdr4jq!shd60%)z59b)&*8@c^1+rjsgn4b8tj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['kimku.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -132,22 +135,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 import os
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('etouhjoykim@gmail.com')
-EMAIL_HOST_PASSWORD = os.environ.get('noggxntaetmnragk')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
 
 STAR_RATINGS_ANONYMOUS  = True
-
-STAR_RATINGS_RERAME_SAME_DELETE = True
-STAR_RATINGS_RANGE = 5
-STAR_RATINGS_STAR_HEIGHT = 25
-STAR_RATINGS_STAR_WIDTH = 25
-
-STAR_RATINGS_RATING_STARS = 5
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")

@@ -4,6 +4,10 @@ from django.db import models
 from django.db import models
 from django.contrib.auth.models import User
 from PIL import Image
+from django.contrib.contenttypes.fields import GenericRelation
+
+
+
 
 STATUS = (
     (0,"Draft"),
@@ -20,7 +24,19 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     image = models.ImageField(upload_to='media/img', blank=True, null=True)
     video = models.FileField(upload_to='media/videos', blank=True, null=True)
-    likes = models.IntegerField(default=0)
+
+class Rating(models.Model):
+    post = models.ForeignKey(Post, related_name='ratings', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='ratings', on_delete=models.CASCADE)
+    ip_address = models.GenericIPAddressField()
+    score = models.PositiveIntegerField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('post', 'user', 'ip_address')
+
+    def __str__(self):
+        return f"{self.post.title} - {self.score}"
 
 
     class Meta:

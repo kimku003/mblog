@@ -1,0 +1,98 @@
+{% load static %}
+
+<html lang="fr">
+  <head>
+    <title>Js event</title>
+    <meta charset="utf-8" />
+    <!-- DESCRIPTION -->
+    <meta name="description" content="" />
+    <!-- MEDIA QUERY- -->
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- FONT AWESOME -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" />
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="{% static 'mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'mblog/sstylee.css' %}" />
+  </head>
+
+  <body>
+    <div class="container mt">
+      <div class="row">
+        <div class="col-md-8 card mb-4 mt-3 left bcg3 top">
+          <div class="card-body bcg3">
+            <h3>Cliquez sur une étoile pour donner une note</h3>
+            <div class="stars">
+              <i class="star stargrey fas fa-star" data-index="0"></i>
+              <i class="star stargrey fas fa-star" data-index="1"></i>
+              <i class="star stargrey fas fa-star" data-index="2"></i>
+              <i class="star stargrey fas fa-star" data-index="3"></i>
+              <i class="star stargrey fas fa-star" data-index="4"></i>
+            </div>
+            <p class="text-muted">{{ post.author }} | {{ post.created_on }}</p>
+            <p class="card-text">{{ post.content|safe }}</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 card mb-4 mt-3 bcg3">
+          <div class="card-body">
+            <!-- post_detail.html -->
+            <!-- comments -->
+            <h2>{{ comments.count }} comments</h2>
+            {% for comment in comments %}
+              <div class="container bss br3 bw1">
+                <div class="comments" style="padding: 10px;">
+                  <p class="font-weight-bold tc1">
+                    {{ comment.name }}
+                    <span class="text-muted font-weight-normal">{{ comment.created_on }}</span>
+                  </p>
+                  {{ comment.body|linebreaks }}
+                </div>
+              </div>
+            {% endfor %}
+
+            {% if new_comment %}
+              <div class="alert alert-success" role="alert">Your comment is awaiting moderation</div>
+            {% else %}
+              <h3>Leave a comment</h3>
+
+              <form method="post" class="needs-validation" novalidate>
+                {% csrf_token %}
+
+                <div class="container col-6">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required />
+                    <div class="invalid-feedback">Veuillez entrer une adresse email valide.</div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="body" class="form-label">commentez</label>
+                    <textarea class="form-control" id="body" name="body" rows="3" required></textarea>
+                    <div class="invalid-feedback">Vous ne pouvez pas laisser un commentaire vide.</div>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+    <form id="csrf-token-form" method="post" style="display: none;">
+      {% csrf_token %}
+    </form>
+    <script src="{% static '/mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/js/jquery-3.7.1.min.js' %}"></script>
+
+    <script src="{% static 'mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static '/mblog/bootstrap5last/Bootstrap5.3/bootstrap-5.3.0-dist/js/sstars.js' %}"></script>
+  </body>
+</html>

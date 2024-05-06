@@ -1,0 +1,31 @@
+* {
+	box-sizing: border-box;
+}
+
+
+img,
+iframe,
+video,
+picture {
+	max-width: 100%;
+}
+
+
+
+.stars {
+	margin: 50px;
+	text-align: center;
+}
+
+.stargrey {
+	color: #96969d;
+}
+
+.yellow {
+	color: #fedc18;
+}
+
+.star:hover {
+	cursor: pointer;
+}
+

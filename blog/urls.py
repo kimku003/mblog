@@ -28,14 +28,13 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
 
 
-    path('userinfo/add/', views.info_view, name='info'),
     path('userinfo/add/', views.info_view, name='infos'),
 
     path('', include('mblog.urls')),
 
     path('post/<slug:slug>/', views.post_detail, name='post_detail'),
 
-    path('like_post/', views.like_post, name='like_post'),
+    path('likee_post/', views.like_post, name='likee_post'),
 
 
 ]

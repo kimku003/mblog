@@ -16,7 +16,7 @@
     </div>
   </header>
 
-  <div class="container col-md-12 bcg3">
+  <div class="container col-md-10 bg-image">
     <div class="col-md-6 col-xs-2 col-sm-2 col-lg-6">
       {% block profil %}
         {% include 'mblog/profil.html' %}
@@ -25,13 +25,15 @@
 
     <div class="row">
       <!-- Blog Entries Column -->
-      <div class="col-md-8 mt-3 left">
+      <div class="col-md-7 mt-3 ml10">
         {% for post in post_list %}
           <div class="card mb-4 bcg2">
             <div class="card-body">
-              <h2 class="card-title">{{ post.title }}</h2>
+              <h2 class="card-title fw-bold">{{ post.title }}</h2>
               <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on }}</p>
-              <p class="card-text">{{ post.content|slice:':200' }}</p>
+              <p class="card-text">
+                {{ post.content|slice:':350' }} ... <br /> <a href="{% url 'post_detail' post.slug %}" class="btn btn-primary">... Read More &rarr;</a>
+              </p>
               <div class="rating" data-post-id="{{ post.id }}">
                 <span class="star" data-value="1">&#9733;</span>
                 <span class="star" data-value="2">&#9733;</span>
@@ -41,7 +43,7 @@
               </div>
               <div class="col-md-6">
                 {% if post.image %}
-                  <img width="400px" src="{{ post.image.url }}" alt="{{ post.title }}" />
+                  <img width="500px" src="{{ post.image.url }}" alt="{{ post.title }}" />
                 {% endif %}
               </div> <div class="col-md-6">
                 {% if post.video %}
@@ -50,8 +52,9 @@
                   </video>
                 {% endif %}
               </div>
-              <a href="{% url 'post_detail'  post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-              <a href="{% url 'post_detail'  post.slug  %}" class="btn btn-info">Comment &rarr;</a>
+              <div class="pt1">
+                <a href="{% url 'post_detail' post.slug %}" class="btn btn-info">Comment &rarr;</a>
+              </div>
             </div>
           </div>
         {% endfor %}
@@ -64,5 +67,4 @@
   <form id="csrf-token-form" method="post" style="display: none;">
     {% csrf_token %}
   </form>
-
 {% endblock %}

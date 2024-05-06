@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mblog',
-
+    
  ]
 
 MIDDLEWARE = [
@@ -141,3 +141,13 @@ EMAIL_HOST_PASSWORD = os.environ.get('noggxntaetmnragk')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
+
+
+STAR_RATINGS_ANONYMOUS  = True
+
+STAR_RATINGS_RERAME_SAME_DELETE = True
+STAR_RATINGS_RANGE = 5
+STAR_RATINGS_STAR_HEIGHT = 25
+STAR_RATINGS_STAR_WIDTH = 25
+
+STAR_RATINGS_RATING_STARS = 5

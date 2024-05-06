@@ -22,7 +22,7 @@ function onStarClick(event) {
 	var parent = $(this).parent();
 
 	// Style : "Vider" toutes les étoiles.. de ce groupe
-	parent.find('.star').addClass('stargrey');
+	parent.find('.star').addClass('                      ');
 	parent.find('.star').removeClass('yellow');
 
 	//// Style : "Remplir" le bon nombre d'étoiles

@@ -121,3 +121,30 @@ def like_post(request):
         post.likes += int(value)
         post.save()
         return JsonResponse({"likes": post.likes})
+
+
+
+
+@csrf_exempt
+def rate_post(request):
+    if request.method == "POST":
+        post_id = request.POST.get("post_id")
+        value = request.POST.get("value")
+        post = Post.objects.get(id=post_id)
+        post.likes += int(value)
+        post.save()
+        return JsonResponse({"likes": post.likes})
+    else:
+        return JsonResponse({"error": "Invalid request"})
+
+
+
+
+
+
+
+
+
+
+
+
